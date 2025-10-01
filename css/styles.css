@@ -61,13 +61,12 @@ img {
 .current-page:after {
     content: "";
     width: 48px;
-    background-color: var(--ocean);
+    background-color: #404bbf;
     height: 4px;
     border-radius: 2px;
     position: absolute;
     left: 0;
-    bottom: 0;
-    margin-bottom: -1px;
+    bottom: -1px;
 }
 
 .nav-list-link:hover,
@@ -91,8 +90,9 @@ color: var(--ocean); */
     color: #404bbf
 }
 
-.team-icon-item:hover {
-    background-color: var(--ocean);
+.team-icon-link:hover,
+.team-icon-link:focus {
+    background-color: #404bbf;
 }
 
 .portfolio-box:hover .portfolio-overlay {
@@ -105,7 +105,8 @@ color: var(--ocean); */
 
 }
 
-.footer-social-item:hover {
+.footer-icon-link:hover,
+.footer-icon-link:focus {
     background-color: var(--green);
 }
 
@@ -155,6 +156,9 @@ p {
 .header {
     background: var(--white);
     border-bottom: 1px solid #E7E9FC;
+    box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+        0px 1px 1px rgba(46, 47, 66, 0.16),
+        0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .nav-container {
@@ -200,6 +204,7 @@ p {
     padding-bottom: 24px;
     color: #2e2f42;
     position: relative;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-item {
@@ -229,7 +234,9 @@ p {
 
 }
 
-
+.address-link {
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 
 
 /* hero */
@@ -239,11 +246,12 @@ p {
 .hero-title {
     background: var(--navy-blue);
     padding: 188px 0;
-    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(/images/hero/people-office\ 1.jpg);
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(/images/people-office.jpg);
     background-repeat: no-repeat;
     background-position: center center;
     max-width: 1440px;
     margin: 0 auto;
+    background-size: cover;
 }
 
 .hero-container {
@@ -276,6 +284,7 @@ p {
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
     border: none;
     min-width: 169px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
@@ -283,15 +292,9 @@ p {
 /* benefits */
 
 
-.icon-list {
-    display: flex;
-    column-gap: 24px;
-    margin-bottom: 8px;
 
-}
 
 .icon-item {
-    width: 264px;
     display: flex;
     justify-content: center;
     background: var(--cloud);
@@ -300,13 +303,10 @@ p {
     width: 264px;
     height: 112px;
     align-items: center;
+    margin-bottom: 8px;
 }
 
-.hero-icon {
-    width: 64px;
-    height: 64px;
 
-}
 
 
 
@@ -401,17 +401,26 @@ p {
 .team-icon-item {
     width: 40px;
     height: 40px;
-    background-color: var(--iris);
+}
+
+
+.team-icon-link {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: #4d5ae5;
     border-radius: 50%;
     justify-content: center;
     align-items: center;
-    display: flex;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+
+
+
 }
 
 .team-icon {
-    width: 16px;
-    height: 16px;
+    fill: #f4f4fd;
 
 }
 
@@ -467,9 +476,13 @@ p {
     height: 100%;
     transform: translateY(100%);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    background-color: var(--iris);
-    color: var(--cloud);
-    padding: 40px 32px 164px 32px;
+    background-color: #4d5ae5;
+    color: #f4f4fd;
+    padding: 40px 32px;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+
 }
 
 
@@ -492,14 +505,12 @@ p {
     padding: 100px 0;
 }
 
-.footer a {
-    display: inline-block;
-    margin-bottom: 16px;
-}
+
 
 .footer-container {
     /* display: flex; */
     flex-direction: column;
+    margin-right: 120px;
 }
 
 
@@ -545,22 +556,27 @@ p {
 }
 
 .footer-social-item {
-    background-color: var(--iris);
+    width: 40px;
+    height: 40px;
+}
+
+
+.footer-icon-link {
+    width: 100%;
+    height: 100%;
+    background-color: #4d5ae5;
     border-radius: 50%;
     justify-content: center;
     align-items: center;
     display: flex;
-    width: 40px;
-    height: 40px;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-icon {
-    width: 24px;
-    height: 24px;
+    fill: #f4f4fd;
 }
 
 .footer-wrapper {
     display: flex;
-    gap: 120px;
+    align-items: baseline;
 }
